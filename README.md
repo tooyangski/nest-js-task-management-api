@@ -1,3 +1,7 @@
+## Environment Setup
+
+- Follow `env.example`
+
 ## Database Setup
 
 Running:
