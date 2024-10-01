@@ -33,11 +33,6 @@ export class TasksController {
     return this.taskService.createTask(createTaskDto);
   }
 
-  @Delete('/:id')
-  deleteTask(@Param('id') id: string): Promise<void> {
-    return this.taskService.deleteTask(id);
-  }
-
   @Patch('/:id/status')
   updateTasksStatus(
     @Param('id') id: string,
@@ -45,5 +40,10 @@ export class TasksController {
   ): Promise<Task> {
     const { status } = updateTaskStatusDto;
     return this.taskService.updateTaskStatus(id, status);
+  }
+
+  @Delete('/:id')
+  deleteTask(@Param('id') id: string): Promise<void> {
+    return this.taskService.deleteTask(id);
   }
 }
