@@ -4,7 +4,7 @@ Running:
 
 - Install docker and PgAdmin 4
 - Run `docker-compose up -d`
-- Container name is "nest-js-task-management-api-postgres-1"
+- Default container name is `nest-js-task-management-api-postgres-1`
 
 Shutdown:
 
