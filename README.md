@@ -28,6 +28,10 @@ Shutdown:
 - Create database name "todo-management"
 - Database should be there.
 
+## Postman Testing
+
+- Import the Collection that is below this README.md file
+
 ## Project setup
 
 ```bash
@@ -68,7 +72,7 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 
 Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
 
-## Collection
+## Postman Collection
 
 `{
 	"info": {
