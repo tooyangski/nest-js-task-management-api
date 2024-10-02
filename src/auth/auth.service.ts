@@ -3,7 +3,7 @@ import { UsersRepository } from './users.repository';
 import { UserCredentialsDto } from './dto/user-credentials-dto';
 import * as ps from 'bcryptjs';
 import { JwtService } from '@nestjs/jwt';
-import { JwtPayload } from 'jsonwebtoken';
+import { JwtPayload } from './dto/jwt-payload-dto';
 @Injectable()
 export class AuthService {
   constructor(
