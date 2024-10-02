@@ -33,8 +33,12 @@ export class TasksService {
   }
 
   async updateTaskStatus(id: string, status: TaskStatus): Promise<Task> {
+    const timestamp = new Date().toISOString();
+
     const task = await this.getTaskById(id);
     task.status = status;
+    task.modifiedAt = timestamp;
+
     await this.tasksRepository.save(task);
     return task;
   }

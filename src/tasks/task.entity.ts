@@ -19,4 +19,10 @@ export class Task {
 
   @Column()
   status: TaskStatus;
+
+  @Column({ nullable: true })
+  createdAt!: string;
+
+  @Column({ nullable: true })
+  modifiedAt!: string;
 }

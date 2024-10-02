@@ -31,11 +31,14 @@ export class TasksRepository extends Repository<Task> {
 
   async createTask(createTaskDto: CreateTaskDto): Promise<Task> {
     const { title, description } = createTaskDto;
+    const timestamp = new Date().toISOString();
 
     const task = this.create({
       title,
       description,
       status: TaskStatus.OPEN,
+      createdAt: timestamp,
+      modifiedAt: timestamp,
     });
 
     await this.save(task);
