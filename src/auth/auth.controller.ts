@@ -8,7 +8,11 @@ export class AuthController {
 
   @Post('/signup')
   signUp(@Body() userCredentialsDto: UserCredentialsDto): Promise<void> {
-    console.log('went into the controller...');
     return this.authService.signUp(userCredentialsDto);
+  }
+
+  @Post('/signin')
+  signIn(@Body() userCredentialsDto: UserCredentialsDto): Promise<string> {
+    return this.authService.signIn(userCredentialsDto);
   }
 }
