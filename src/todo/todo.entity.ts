@@ -2,14 +2,14 @@ import { Exclude } from 'class-transformer';
 import { User } from 'src/auth/user.entity';
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
 
-export enum TaskStatus {
+export enum TodoStatus {
   OPEN = 'OPEN',
   IN_PROGRESS = 'IN_PROGRESS',
   DONE = 'DONE',
 }
 
 @Entity()
-export class Task {
+export class Todo {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
@@ -20,7 +20,7 @@ export class Task {
   description: string;
 
   @Column()
-  status: TaskStatus;
+  status: TodoStatus;
 
   @Column({ nullable: true })
   createdAt!: string;
@@ -28,7 +28,7 @@ export class Task {
   @Column({ nullable: true })
   modifiedAt!: string;
 
-  @ManyToOne(() => User, (user) => user.tasks, { eager: false })
+  @ManyToOne(() => User, (user) => user.todos, { eager: false })
   @Exclude({ toPlainOnly: true })
   user: User;
 }

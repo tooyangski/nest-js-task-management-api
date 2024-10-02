@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import * as Joi from 'joi';
-import { TasksModule } from './tasks/tasks.module';
+import { TodosModule } from './todo/todos.module';
 import { DatabaseModule } from './common/database.module';
 import { AuthModule } from './auth/auth.module';
 
@@ -23,7 +23,7 @@ import { AuthModule } from './auth/auth.module';
     }),
     DatabaseModule,
     AuthModule,
-    TasksModule,
+    TodosModule,
   ],
 })
 export class AppModule {}

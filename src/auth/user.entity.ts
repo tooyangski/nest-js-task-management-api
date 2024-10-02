@@ -1,4 +1,4 @@
-import { Task } from 'src/tasks/task.entity';
+import { Todo } from 'src/todo/todo.entity';
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
@@ -18,6 +18,6 @@ export class User {
   @Column()
   modifiedAt: string;
 
-  @OneToMany(() => Task, (task) => task.user, { eager: true })
-  tasks: Task[];
+  @OneToMany(() => Todo, (Todo) => Todo.user, { eager: true })
+  todos: Todo[];
 }

@@ -78,13 +78,13 @@ Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
 {
   "info": {
     "_postman_id": "291ecbec-24a2-43af-8af8-1e858c2bd356",
-    "name": "Tasks",
+    "name": "Todos",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
     "_exporter_id": "3297747"
   },
   "item": [
     {
-      "name": "Get All Tasks With Filters",
+      "name": "Get All Todos With Filters",
       "request": {
         "auth": {
           "type": "bearer",
@@ -99,11 +99,11 @@ Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3000/tasks?status=OPEN&search=user",
+          "raw": "http://localhost:3000/todos?status=OPEN&search=user",
           "protocol": "http",
           "host": ["localhost"],
           "port": "3000",
-          "path": ["tasks"],
+          "path": ["todos"],
           "query": [
             {
               "key": "status",
@@ -119,7 +119,7 @@ Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
       "response": []
     },
     {
-      "name": "Get All Tasks Without Filters",
+      "name": "Get All Todos Without Filters",
       "request": {
         "auth": {
           "type": "bearer",
@@ -134,17 +134,17 @@ Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3000/tasks",
+          "raw": "http://localhost:3000/todos",
           "protocol": "http",
           "host": ["localhost"],
           "port": "3000",
-          "path": ["tasks"]
+          "path": ["todos"]
         }
       },
       "response": []
     },
     {
-      "name": "Create Task",
+      "name": "Create Todo",
       "request": {
         "auth": {
           "type": "bearer",
@@ -168,32 +168,32 @@ Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
           }
         },
         "url": {
-          "raw": "http://localhost:3000/tasks",
+          "raw": "http://localhost:3000/todos",
           "protocol": "http",
           "host": ["localhost"],
           "port": "3000",
-          "path": ["tasks"]
+          "path": ["todos"]
         }
       },
       "response": []
     },
     {
-      "name": "Get Task By Id",
+      "name": "Get Todo By Id",
       "request": {
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://localhost:3000/tasks/3721d3ba-8f6d-401c-ac71-78a030aafa67",
+          "raw": "http://localhost:3000/todos/3721d3ba-8f6d-401c-ac71-78a030aafa67",
           "protocol": "http",
           "host": ["localhost"],
           "port": "3000",
-          "path": ["tasks", "3721d3ba-8f6d-401c-ac71-78a030aafa67"]
+          "path": ["todos", "3721d3ba-8f6d-401c-ac71-78a030aafa67"]
         }
       },
       "response": []
     },
     {
-      "name": "Delete Task By Id",
+      "name": "Delete Todo By Id",
       "request": {
         "auth": {
           "type": "bearer",
@@ -208,17 +208,17 @@ Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
         "method": "DELETE",
         "header": [],
         "url": {
-          "raw": "http://localhost:3000/tasks/c7323aab-f3bb-4118-a433-793f844129e4",
+          "raw": "http://localhost:3000/todos/c7323aab-f3bb-4118-a433-793f844129e4",
           "protocol": "http",
           "host": ["localhost"],
           "port": "3000",
-          "path": ["tasks", "c7323aab-f3bb-4118-a433-793f844129e4"]
+          "path": ["todos", "c7323aab-f3bb-4118-a433-793f844129e4"]
         }
       },
       "response": []
     },
     {
-      "name": "Update Task Status By Id",
+      "name": "Update Todo Status By Id",
       "request": {
         "auth": {
           "type": "bearer",
@@ -242,11 +242,11 @@ Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
           }
         },
         "url": {
-          "raw": "http://localhost:3000/tasks/c7323aab-f3bb-4118-a433-793f844129e4/status",
+          "raw": "http://localhost:3000/todos/c7323aab-f3bb-4118-a433-793f844129e4/status",
           "protocol": "http",
           "host": ["localhost"],
           "port": "3000",
-          "path": ["tasks", "c7323aab-f3bb-4118-a433-793f844129e4", "status"]
+          "path": ["todos", "c7323aab-f3bb-4118-a433-793f844129e4", "status"]
         }
       },
       "response": []
