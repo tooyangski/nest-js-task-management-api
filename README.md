@@ -1,6 +1,6 @@
 ## Project Info
 
-- This is the backend for next-js-task-management-ui (not yet started)
+- This is the backend for nextjs-todo-ui (not yet started)
 
 ## Environment Setup
 
@@ -12,7 +12,7 @@ Running:
 
 - Install docker and PgAdmin 4
 - Run `docker-compose up -d`
-- Default container name is `nest-js-task-management-api-postgres-1`
+- Default container name is `nestjs-todo-api-postgres-1`
 
 Shutdown:
 
@@ -25,7 +25,7 @@ Shutdown:
   - Use any name you like
   - Use "postgres" for username and password
   - Use "localhost" for Host name/address
-- Create database name "task-management"
+- Create database name "todo-management"
 - Database should be there.
 
 ## Project setup
