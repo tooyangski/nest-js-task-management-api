@@ -25,6 +25,7 @@ Shutdown:
   - Use any name you like
   - Use "postgres" for username and password
   - Use "localhost" for Host name/address
+- Create database name "task-management"
 - Database should be there.
 
 ## Project setup
