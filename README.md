@@ -1,3 +1,7 @@
+## Project Info
+
+- This is the backend for next-js-task-management-ui (not yet started)
+
 ## Environment Setup
 
 - Follow `env.example`
