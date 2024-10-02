@@ -29,7 +29,6 @@ export class TasksController {
 
   @Post()
   createTask(@Body() createTaskDto: CreateTaskDto): Promise<Task> {
-    console.log('went into the controller...');
     return this.taskService.createTask(createTaskDto);
   }
 

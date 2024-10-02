@@ -17,11 +17,13 @@ import { AuthModule } from './auth/auth.module';
         DB_NAME: Joi.string().required(),
         AUTO_LOAD_ENTITIES: Joi.bool().required(),
         SYNC_SCHEMA: Joi.bool().required(),
+        JWT_SECRET: Joi.string().required(),
+        JWT_EXPIRY: Joi.string().required(),
       }),
     }),
     DatabaseModule,
-    TasksModule,
     AuthModule,
+    TasksModule,
   ],
 })
 export class AppModule {}
