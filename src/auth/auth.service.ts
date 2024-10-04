@@ -15,9 +15,7 @@ export class AuthService {
     return this.usersRepository.createUser(userCredentialsDto);
   }
 
-  async signIn(
-    userCredentialsDto: UserCredentialsDto,
-  ): Promise<{ accessToken: string }> {
+  async signIn(userCredentialsDto: UserCredentialsDto): Promise<string> {
     const { email, password } = userCredentialsDto;
 
     const user = await this.usersRepository.findOne({
@@ -31,7 +29,7 @@ export class AuthService {
       const payload: JwtPayload = { email, createdAt, modifiedAt };
       const accessToken: string = await this.jwtService.signAsync(payload);
 
-      return { accessToken };
+      return accessToken;
     } else {
       throw new UnauthorizedException('email or password is incorrect.');
     }
