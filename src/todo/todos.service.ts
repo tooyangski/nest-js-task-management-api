@@ -2,7 +2,7 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { TodosRepository } from './todos.resository';
 import { Todo, TodoStatus } from './todo.entity';
-import { CreateTodoDto } from './dto/create-todo-dto';
+import { CreateUpdateTodoDto } from './dto/create-todo-dto';
 import { GetTodosFilterDto } from './dto/get-todos-filter-dto';
 import { User } from 'src/auth/user.entity';
 
@@ -23,7 +23,7 @@ export class TodosService {
     return Todo;
   }
 
-  createTodo(createTodoDto: CreateTodoDto, user: User): Promise<Todo> {
+  createTodo(createTodoDto: CreateUpdateTodoDto, user: User): Promise<Todo> {
     return this.TodosRepository.createTodo(createTodoDto, user);
   }
 
@@ -44,6 +44,18 @@ export class TodosService {
 
     const Todo = await this.getTodoById(id, user);
     Todo.status = status;
+    Todo.modifiedAt = timestamp;
+
+    await this.TodosRepository.save(Todo);
+    return Todo;
+  }
+
+  async updateTodo(id: string, title: string, description: string, user: User) {
+    const timestamp = new Date().toISOString();
+
+    const Todo = await this.getTodoById(id, user);
+    Todo.title = title;
+    Todo.description = description;
     Todo.modifiedAt = timestamp;
 
     await this.TodosRepository.save(Todo);

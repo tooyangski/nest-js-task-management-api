@@ -1,5 +1,5 @@
 import { DataSource, Repository } from 'typeorm';
-import { CreateTodoDto } from './dto/create-todo-dto';
+import { CreateUpdateTodoDto } from './dto/create-todo-dto';
 import { GetTodosFilterDto } from './dto/get-todos-filter-dto';
 import { Todo, TodoStatus } from './todo.entity';
 import { Injectable } from '@nestjs/common';
@@ -30,7 +30,10 @@ export class TodosRepository extends Repository<Todo> {
     return Todos;
   }
 
-  async createTodo(createTodoDto: CreateTodoDto, user: User): Promise<Todo> {
+  async createTodo(
+    createTodoDto: CreateUpdateTodoDto,
+    user: User,
+  ): Promise<Todo> {
     const { title, description } = createTodoDto;
     const timestamp = new Date().toISOString();
 

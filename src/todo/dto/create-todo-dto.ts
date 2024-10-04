@@ -1,6 +1,6 @@
 import { IsNotEmpty } from 'class-validator';
 
-export class CreateTodoDto {
+export class CreateUpdateTodoDto {
   @IsNotEmpty()
   title: string;
 

@@ -6,11 +6,12 @@ import {
   Param,
   Patch,
   Post,
+  Put,
   Query,
   UseGuards,
 } from '@nestjs/common';
 import { TodosService } from './todos.service';
-import { CreateTodoDto } from './dto/create-todo-dto';
+import { CreateUpdateTodoDto } from './dto/create-todo-dto';
 import { Todo } from './todo.entity';
 import { UpdateTodoStatusDto } from './dto/update-todo-status-dto';
 import { GetTodosFilterDto } from './dto/get-todos-filter-dto';
@@ -38,7 +39,7 @@ export class TodosController {
 
   @Post()
   createTodo(
-    @Body() createTodoDto: CreateTodoDto,
+    @Body() createTodoDto: CreateUpdateTodoDto,
     @GetUser() user: User,
   ): Promise<Todo> {
     return this.TodoService.createTodo(createTodoDto, user);
@@ -52,6 +53,16 @@ export class TodosController {
   ): Promise<Todo> {
     const { status } = updateTodoStatusDto;
     return this.TodoService.updateTodoStatus(id, status, user);
+  }
+
+  @Put('/:id')
+  updateTodoss(
+    @Param('id') id: string,
+    @Body() existingTodo: CreateUpdateTodoDto,
+    @GetUser() user: User,
+  ): Promise<Todo> {
+    const { title, description } = existingTodo;
+    return this.TodoService.updateTodo(id, title, description, user);
   }
 
   @Delete('/:id')
